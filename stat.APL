@@ -11,4 +11,5 @@ sigma ←{sigma2 ⍵*0.5}
 cov← {((⍵+.×⍺)-((+/⍵)×(+/⍺))÷(⍴,⍵))÷(⍴,⍵)}
 moments ← {(+/(⍵-(mu ⍵)*⍺))÷((⍴,⍵)-1)} 
 poisson←{(*-⍵)×(⍵*X)÷!X←(0,⍳⍺)}
-poisson_cum ← {+\⍺ poisson ⍵}
+poisson_cumulative ← {+\⍺ poisson ⍵}
+correlate ← {(+/((⍵-(mu ⍵))×(⍺-(mu ⍺)))) ÷ ((+/(⍵-(mu ⍵))*2) × (+/(⍺-(mu ⍺))*2))*0.5}
